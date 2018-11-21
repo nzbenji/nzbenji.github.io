@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+/******************* HEADING *******************/
+.header {
+  height: 50vh;
+  background-image: url(sunset.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 100%);
+}
+.heading {
+  color: rgb(90, 85, 85);
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+}
+.heading-primary--main {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  font-size: 5rem;
+  font-weight: 600;
+  letter-spacing: 4rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  text-align: center;
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+}
+/******************* HEADING ANIMATIONS *******************/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+/******************* FOOTER *******************/
+.footer {
+  height: 15vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 60, 60, 0.8),
+    rgba(255, 127, 42, 0.8)
+  );
+  padding: 32px;
+    margin-top: 48px;
+}
