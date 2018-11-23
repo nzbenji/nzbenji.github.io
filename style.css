@@ -11,6 +11,196 @@ body {
   box-sizing: border-box;
 }
 
+/******************* NAVIGATION *******************/
+.navigation {
+}
+.navigation__checkbox {
+  display: none;
+}
+
+.navigation__btn {
+  background: #fff;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 4.5rem;
+  right: 4.5rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(black, 0.1);
+  cursor: pointer;
+}
+
+.navigation__background {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(
+    rgb(255, 60, 60, 0.8),
+    rgb(255, 127, 42, 0.8)
+  );
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s;
+}
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.navigation__item {
+  margin: 1rem;
+}
+.navigation__link:link,
+.navigation__link:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 100;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent,
+    transparent 0%,
+    transparent 50%,
+    #fff 50%
+  );
+  background-size: 220%;
+  transition: all 1s;
+}
+.navigation__link:hover,
+.navigation__link:active {
+  background-position: 100%;
+  color: rgb(90, 85, 85);
+  transform: translateX(1rem);
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+}
+
+/******************* NAVIGATION ICON AND ANIMATION *******************/
+.navigation__icon-x {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent; 
+  }
+  
+  .navigation__icon-x, 
+  .navigation__icon-x::before, 
+  .navigation__icon-x::after {
+    display: inline-block;
+    position: absolute;
+    width: 3rem;
+    height: 2px; 
+  }
+  
+  .navigation__icon-x::before, 
+  .navigation__icon-x::after {
+    content: "";
+    left: 0;
+    top: 0;
+    background-color: #333;
+    transition: transform .4s;
+    perspective: 1500; 
+  }
+  
+  .navigation__icon-x--lines {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent; 
+  }
+  
+  .navigation__icon-x--lines, 
+  .navigation__icon-x--lines::before, 
+  .navigation__icon-x--lines::after {
+    display: inline-block;
+    position: absolute;
+    width: 3rem;
+    height: 2px
+  }
+  
+  .navigation__icon-x--lines::before, 
+  .navigation__icon-x--lines::after {
+    content: "";
+    left: 0;
+    background-color: #333;
+    transition: all 0.4s cubic-bezier(.165, .84, .44, 1); 
+  }
+  
+  .navigation__icon-x--lines::before {
+    transform: translateY(-1rem); 
+  }
+  
+  .navigation__icon-x--lines::after {
+    transform: translateY(1rem); 
+  }
+  
+  .navigation__checkbox:checked ~ 
+  .navigation__btn 
+  .navigation__icon-x::before {
+    transform: rotate(-135deg) scale(1.2);
+    transition-delay: .2s;
+  }
+  
+  .navigation__checkbox:checked ~ 
+  .navigation__btn
+  .navigation__icon-x::after {
+    transform: rotate(135deg) scale(1.2);
+    transition-delay: .2s;
+  }
+  
+  .navigation__checkbox:not(:checked) ~ 
+  .navigation__btn 
+  .navigation__icon-x::before, 
+  .navigation__checkbox:not(:checked) ~ 
+  .navigation__btn
+  .navigation__icon-x::after {
+    transition: transform .4s;
+  }
+  
+  .navigation__checkbox:checked ~ 
+  .navigation__btn 
+  .navigation__icon-x--lines::before, 
+  .navigation__checkbox:checked ~ 
+  .navigation__btn
+  .navigation__icon-x--lines::after {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  
+  .navigation__checkbox:not(:checked) ~ 
+  .btn 
+  .navigation__icon-x--lines::before, 
+  .navigation__checkbox:not(:checked) ~ 
+  .navigation__btn
+  .navigation__icon-x--lines::after {
+    transition: all .5s .4s cubic-bezier(.19, 1, .22, 1);
+  }
+
 /******************* HEADING *******************/
 .header {
   height: 50vh;
@@ -45,6 +235,7 @@ body {
   animation-name: moveInBottom;
   animation-duration: 1s;
 }
+
 /******************* HEADING ANIMATIONS *******************/
 @keyframes moveInLeft {
   0% {
