@@ -12,8 +12,6 @@ body {
 }
 
 /******************* NAVIGATION *******************/
-.navigation {
-}
 .navigation__checkbox {
   display: none;
 }
@@ -94,114 +92,120 @@ body {
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80);
 }
-
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
   width: 100%;
 }
-
 /******************* NAVIGATION ICON AND ANIMATION *******************/
 .navigation__icon-x {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent; 
-  }
-  
-  .navigation__icon-x, 
-  .navigation__icon-x::before, 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.navigation__icon-x,
+.navigation__icon-x::before,
+.navigation__icon-x::after {
+  display: inline-block;
+  position: absolute;
+  width: 3rem;
+  height: 2px;
+}
+.navigation__icon-x::before,
+.navigation__icon-x::after {
+  content: "";
+  left: 0;
+  top: 0;
+  background-color: #333;
+  transition: transform 0.4s;
+  perspective: 1500;
+}
+.navigation__icon-x--lines {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.navigation__icon-x--lines,
+.navigation__icon-x--lines::before,
+.navigation__icon-x--lines::after {
+  display: inline-block;
+  position: absolute;
+  width: 3rem;
+  height: 2px;
+}
+.navigation__icon-x--lines::before,
+.navigation__icon-x--lines::after {
+  content: "";
+  left: 0;
+  background-color: #333;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.navigation__icon-x--lines::before {
+  transform: translateY(-1rem);
+}
+.navigation__icon-x--lines::after {
+  transform: translateY(1rem);
+}
+.navigation__checkbox:checked ~ .navigation__btn .navigation__icon-x::before {
+  transform: rotate(-135deg) scale(1.2);
+  transition-delay: 0.2s;
+}
+.navigation__checkbox:checked ~ .navigation__btn .navigation__icon-x::after {
+  transform: rotate(135deg) scale(1.2);
+  transition-delay: 0.2s;
+}
+.navigation__checkbox:not(:checked)
+  ~ .navigation__btn
+  .navigation__icon-x::before,
+.navigation__checkbox:not(:checked)
+  ~ .navigation__btn
   .navigation__icon-x::after {
-    display: inline-block;
-    position: absolute;
-    width: 3rem;
-    height: 2px; 
-  }
-  
-  .navigation__icon-x::before, 
-  .navigation__icon-x::after {
-    content: "";
-    left: 0;
-    top: 0;
-    background-color: #333;
-    transition: transform .4s;
-    perspective: 1500; 
-  }
-  
-  .navigation__icon-x--lines {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent; 
-  }
-  
-  .navigation__icon-x--lines, 
-  .navigation__icon-x--lines::before, 
+  transition: transform 0.4s;
+}
+.navigation__checkbox:checked
+  ~ .navigation__btn
+  .navigation__icon-x--lines::before,
+.navigation__checkbox:checked
+  ~ .navigation__btn
   .navigation__icon-x--lines::after {
-    display: inline-block;
-    position: absolute;
-    width: 3rem;
-    height: 2px
-  }
-  
-  .navigation__icon-x--lines::before, 
+  opacity: 0;
+  transform: translateY(0);
+}
+.navigation__checkbox:not(:checked) ~ .btn .navigation__icon-x--lines::before,
+.navigation__checkbox:not(:checked)
+  ~ .navigation__btn
   .navigation__icon-x--lines::after {
-    content: "";
-    left: 0;
-    background-color: #333;
-    transition: all 0.4s cubic-bezier(.165, .84, .44, 1); 
-  }
-  
-  .navigation__icon-x--lines::before {
-    transform: translateY(-1rem); 
-  }
-  
-  .navigation__icon-x--lines::after {
-    transform: translateY(1rem); 
-  }
-  
-  .navigation__checkbox:checked ~ 
-  .navigation__btn 
-  .navigation__icon-x::before {
-    transform: rotate(-135deg) scale(1.2);
-    transition-delay: .2s;
-  }
-  
-  .navigation__checkbox:checked ~ 
-  .navigation__btn
-  .navigation__icon-x::after {
-    transform: rotate(135deg) scale(1.2);
-    transition-delay: .2s;
-  }
-  
-  .navigation__checkbox:not(:checked) ~ 
-  .navigation__btn 
-  .navigation__icon-x::before, 
-  .navigation__checkbox:not(:checked) ~ 
-  .navigation__btn
-  .navigation__icon-x::after {
-    transition: transform .4s;
-  }
-  
-  .navigation__checkbox:checked ~ 
-  .navigation__btn 
-  .navigation__icon-x--lines::before, 
-  .navigation__checkbox:checked ~ 
-  .navigation__btn
-  .navigation__icon-x--lines::after {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  
-  .navigation__checkbox:not(:checked) ~ 
-  .btn 
-  .navigation__icon-x--lines::before, 
-  .navigation__checkbox:not(:checked) ~ 
-  .navigation__btn
-  .navigation__icon-x--lines::after {
-    transition: all .5s .4s cubic-bezier(.19, 1, .22, 1);
-  }
-
+  transition: all 0.5s 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
 /******************* HEADING *******************/
+
+/* SOCIAL LINKS */
+.share {
+  width: 50%;
+  margin: 5rem auto;
+  text-align: left;
+  z-index: 5000;
+}
+.share a {
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 5rem;
+  color: rgba(248, 27, 27, 0.8);
+  opacity: 0.75;
+  transition: opacity 0.15s linear;
+}
+.share a:hover {
+  opacity: 1;
+  color: #fff;
+}
+.share i {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .header {
   height: 50vh;
   background-image: url(sunset.jpg);
@@ -235,7 +239,6 @@ body {
   animation-name: moveInBottom;
   animation-duration: 1s;
 }
-
 /******************* HEADING ANIMATIONS *******************/
 @keyframes moveInLeft {
   0% {
@@ -260,12 +263,10 @@ body {
     transform: translate(0);
   }
 }
-
 /******************* MAIN PAGE BODY *******************/
 .greeting {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
 }
-
 .greeting__title {
   font-size: 3.5rem;
   font-weight: 400;
@@ -278,76 +279,67 @@ body {
   font-weight: 200;
   text-align: center;
 }
-
 .main {
   position: relative;
 }
-
 .mb__wrap {
-  margin: 20px auto; 
-  padding: 20px; 
-  position: relative; 
-  width: 300px; 
-} 
-
-.mb__wrap p {
-  margin : 0; 
-  padding : 0; 
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  width: 300px;
 }
-
+.mb__wrap p {
+  margin: 0;
+  padding: 0;
+}
 .mb__wrap blockquote {
-  margin: 0; 
-  padding: 0; 
-  position: relative; 
-} 
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
 .mb__style-2 blockquote {
-  padding-top: 9.5rem; 
-} 
-
+  padding-top: 9.5rem;
+}
 .mb__style-2 blockquote:after {
-    background: none repeat scroll 0 0 rgba(235, 150, 108, 0.8);
-    border-radius: 50% 50% 50% 50%;
-    color: rgba(255, 255, 255, 0.5);
-    content: "  ❞";
-    font-family: 'icons';
-    font-size: 2rem;
-    letter-spacing: 2rem;
-    height: 8.5rem;
-    left: 50%;
-    line-height: 8rem;
-    margin-left: -3rem;
-    position: absolute;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
-    top: 0;
-    width: 8.5rem;
+  background: none repeat scroll 0 0 rgba(235, 150, 108, 0.8);
+  border-radius: 50% 50% 50% 50%;
+  color: rgba(255, 255, 255, 0.5);
+  content: "  ❞";
+  font-family: "icons";
+  font-size: 2rem;
+  letter-spacing: 2rem;
+  height: 8.5rem;
+  left: 50%;
+  line-height: 8rem;
+  margin-left: -3rem;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+  top: 0;
+  width: 8.5rem;
 }
 .mb__style-2 blockquote:before {
-    border-left: .5rem solid rgba(236, 37, 33, 0.1);
-    border-radius: 50% 50% 50% 50%;
-    content: "";
-    height: 30rem;
-    left: -3rem;
-    position: absolute;
-    top: 0;
-    width: 30rem;
-    z-index: -1;
+  border-left: 0.5rem solid rgba(236, 37, 33, 0.1);
+  border-radius: 50% 50% 50% 50%;
+  content: "";
+  height: 30rem;
+  left: -3rem;
+  position: absolute;
+  top: 0;
+  width: 30rem;
+  z-index: -1;
 }
-
 .mb__style-2 blockquote p {
-  background : none repeat scroll 0 0 rgba(255, 255, 255, 0.5); 
-  box-shadow : 0 -6px 0 rgba(235, 150, 108, 0.2); 
-  color : rgba(235, 150, 108, 0.8); 
-  display : inline; 
-  font-family: 'Dosis', sans-serif;
-  font-style : italic; 
-  font-size : 1.7rem; 
-  line-height : 3.5rem; 
-} 
-
-
-
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 -6px 0 rgba(235, 150, 108, 0.2);
+  color: rgba(235, 150, 108, 0.8);
+  display: inline;
+  font-family: "Dosis", sans-serif;
+  font-style: italic;
+  font-size: 1.7rem;
+  line-height: 3.5rem;
+}
 /******************* FOOTER *******************/
 .footer {
   height: 15vh;
@@ -356,6 +348,6 @@ body {
     rgba(255, 60, 60, 0.8),
     rgba(255, 127, 42, 0.8)
   );
-    padding: 2rem;
-    margin-bottom: 0;
+  padding: 2rem;
+  margin-bottom: 0;
 }
