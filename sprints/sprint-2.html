@@ -47,6 +47,34 @@
       </div>
     </header>
 
+    <div class="sprint">
+        <h1 class="main__title">Sprint Two</h1>
+        <h1 class="main__title">HTML & CSS</h1>
+        <h2 class="sub__title">What is the difference between relative, absolute and fixed positioning?</h2>
+
+        <p class="sprint__text">In order to make layouts more complex, we need to have a look at the position property. 
+            It has a handful of properties attached to it, but in here we will be looking at the differences between relative, absolute and fixed.</p>
+        <h3 class="subject__title">Relative</h3>
+
+        <p class="sprint__text">Relative position can be defined as "relative to itself". If you set position: relative to an element, it will remain static until you set positioning attributes 
+            (top, left, bottom, right) which it will then be adjusted away from its static position. 
+                It's also good to note that once you set position relative on an element it introduces the z-index property on that element (which specifies the stack order of that element).
+        </p>
+        <h3 class="subject__title">Absolute</h3>
+
+        <p class="sprint__text">Absolute positioning behaves relative to the nearest positioned ancestor. If there are no positioned ancestors, it uses the document body (meaning it will be placed relative to the page itself). 
+            Again you still have access to positioning attributes (top, left, bottom, right) to set the position of the element.
+                The most important thing to note about absolute positioning is that elements using position: absolute; will be removed from the flow of elements on the page. 
+                This means that an element with this position is not interacting with other elements or affected by other elements - which can limit the flexibility of your website.
+        </p>
+        <h3 class="subject__title">Fixed</h3>
+
+        <p class="sprint__text">A fixed element is positioned relative to the viewport, or the browser window itself and removed from the flow of the document (just like an absolute positioned element), 
+            which means it stays in the same location on the page when scrolling. 
+            This positioning element can be useful if you wish to implement a sticky top menu or social sharing buttons to stay in the same place when scrolling down your website.
+        </p>
+    </div>
+
     <footer class="footer"></footer>
   </body>
 </html>

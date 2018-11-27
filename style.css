@@ -340,6 +340,38 @@ body {
   font-size: 1.7rem;
   line-height: 3.5rem;
 }
+/******************* SPRINT PAGE TEXT *******************/
+.sprint {
+  margin: 10rem;
+  
+}
+.main__title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  padding: 1rem;
+}
+.sub__title {
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+}
+.sprint__text {
+  font-size: 1.4rem;
+  padding: 2rem;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+.subject__title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: .6rem;
+  padding: 4rem;
+}
+
 /******************* FOOTER *******************/
 .footer {
   height: 15vh;
