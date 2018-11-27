@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body>
       <div class="navigation">
@@ -44,6 +45,17 @@
           <span class="heading-primary--sub">Sprint Two</span
           >
         </h1>
+        <div class="share">
+                <a class="home" href="https://nzbenji.github.io" target="blank">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a class="github" href="https://github.com/nzbenji?tab=repositories" target="blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a class="linkedin" href="https://www.linkedin.com/in/ben-little-a91280176/" target="blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
       </div>
     </header>
 
@@ -59,6 +71,7 @@
         <p class="sprint__text">Relative position can be defined as "relative to itself". If you set position: relative to an element, it will remain static until you set positioning attributes 
             (top, left, bottom, right) which it will then be adjusted away from its static position. 
                 It's also good to note that once you set position relative on an element it introduces the z-index property on that element (which specifies the stack order of that element).
+                <script src="https://gist.github.com/nzbenji/1a768f1ffcb77b8f3d6b405700c58557.js"></script>
         </p>
         <h3 class="subject__title">Absolute</h3>
 
@@ -66,12 +79,15 @@
             Again you still have access to positioning attributes (top, left, bottom, right) to set the position of the element.
                 The most important thing to note about absolute positioning is that elements using position: absolute; will be removed from the flow of elements on the page. 
                 This means that an element with this position is not interacting with other elements or affected by other elements - which can limit the flexibility of your website.
+                <script src="https://gist.github.com/nzbenji/c910a511a004638e5f8567df8bab067e.js"></script>
         </p>
         <h3 class="subject__title">Fixed</h3>
 
         <p class="sprint__text">A fixed element is positioned relative to the viewport, or the browser window itself and removed from the flow of the document (just like an absolute positioned element), 
             which means it stays in the same location on the page when scrolling. 
             This positioning element can be useful if you wish to implement a sticky top menu or social sharing buttons to stay in the same place when scrolling down your website.
+            My navigation button on the right hand side is an example of a fixed element!
+            <script src="https://gist.github.com/nzbenji/5885165c25f599a8e17f0abcf857fbb3.js"></script>
         </p>
     </div>
 
