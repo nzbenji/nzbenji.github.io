@@ -369,6 +369,7 @@ body {
   text-align: center;
 }
 .subject__title {
+  text-transform: uppercase;
   text-align: center;
   font-size: 2.5rem;
   font-weight: 400;
