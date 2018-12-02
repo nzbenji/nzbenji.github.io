@@ -278,6 +278,7 @@ body {
   letter-spacing: 1rem;
 }
 .greeting__text {
+  margin: 10rem;
   font-size: 1.5rem;
   font-weight: 200;
   text-align: center;
