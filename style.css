@@ -283,6 +283,7 @@ body {
   font-weight: 200;
   text-align: center;
 }
+
 .main {
   position: relative;
 }
@@ -348,12 +349,19 @@ body {
 /******************* SPRINT PAGE TEXT *******************/
 .sprint {
   margin: 10rem;
+  text-align: center;
+}
+
+.anchor__core {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
   
+  display:inline-block;
 }
 .main__title {
   font-size: 4rem;
   font-weight: 600;
-  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem;
   padding: 1rem;
@@ -361,17 +369,14 @@ body {
 .sub__title {
   font-size: 3rem;
   font-weight: 200;
-  text-align: center;
 }
 .sprint__text {
   font-size: 1.4rem;
   padding: 2rem;
   font-family: 'Lato', sans-serif;
-  text-align: center;
 }
 .subject__title {
   text-transform: uppercase;
-  text-align: center;
   font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: .6rem;
